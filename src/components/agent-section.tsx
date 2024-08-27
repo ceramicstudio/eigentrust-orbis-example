@@ -101,24 +101,6 @@ export default function AgentSection() {
   const [viewScores, setViewScores] = useState(false);
   const [globalScores, setGlobalScores] = useState<GlobalScores>({});
   const { address } = useAccount();
-  const [scopes, setScopes] = useState<
-    {
-      agentName: string;
-      scope: string;
-    }[]
-  >([]);
-  const [levels, setLevels] = useState<
-    {
-      agentName: string;
-      level: number;
-    }[]
-  >([]);
-  const [reasons, setReasons] = useState<
-    {
-      agentName: string;
-      reason: string[];
-    }[]
-  >([]);
   const [newsTrust, setNewsTrust] = useState<TrustType[]>([]);
   const [aaveTrust, setAaveTrust] = useState<TrustType[]>([]);
   const [duneTrust, setDuneTrust] = useState<TrustType[]>([]);
