@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ChatInput, ChatMessages } from "./ui/chat"
 import { useSelector } from "react-redux"
 import { RootState } from "@/store"
@@ -8,10 +8,15 @@ import { useAppDispatch } from "@/store/hooks"
 import { setTransformedMessages } from "@/features/chatSlice"
 import { sendChatAPI, sendChatMediaAPI } from "@/apis/chat"
 import { toast } from "react-toastify"
+import useStore from "../../store"
+import { useAccount, useWalletClient } from "wagmi";
 
 export default function ChatSection() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [formData, setFormData] = useState<any>({})
+  const { address } = useAccount();
+  const { orbis, orbisSession, setAuth } = useStore();
+  
 
   const { transformedMessages } = useSelector((state: RootState) => state.chat)
   const dispatch = useAppDispatch()
@@ -84,6 +89,12 @@ export default function ChatSection() {
     )
     setIsLoading(false)
   }
+
+  useEffect(() => {
+    if( address) {
+      setAuth(window.ethereum);
+    }
+  }, [address]);
 
   return (
     <div className="space-y-2 md:space-y-4 max-w-5xl w-full flex-grow">

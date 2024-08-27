@@ -1,5 +1,5 @@
 import Header from "@/components/header"
-import AgentSection from "../components/agent-section"
+import AgentSection from "@/components/agent-section"
 
 export default function Home() {
   return (
