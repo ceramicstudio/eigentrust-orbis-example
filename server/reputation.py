@@ -29,7 +29,6 @@ class ReputationCalculator:
 
     def calculate(self):
         lt = {}
-        lt2 = {}
         gt = {}
         print(body)
         if self.cache is None:
@@ -65,30 +64,17 @@ class ReputationCalculator:
             else:
                 print(f"Error: {response.status_code}")
                 print(response.text)
-
-            # # Create symmetric book-to-user arc (used for non symmetric trustworthiness)
-            # for key in lt:
-            #     if key not in lt2:
-            #         lt2[key] = []
-            #     for row in lt[key]:
-            #         lt2[key].append(row)
-            #         lt2[key].append({'i': row['j'], 'j': row['i'], 'v': row['v']})
-
-
-            # Initialize EigenTrust with alpha=0 and max_iterations=2
-            eigentrust = EigenTrust(alpha=0, max_iterations=2)
+            # Initialize EigenTrust with alpha=0 (no trust propagation)
+            eigentrust = EigenTrust(alpha=0)
 
             # Iterate through each scope's trustworthiness array
-            # for key in lt2:
             for key in lt:
-                # localtrust = lt2[key]
                 localtrust = lt[key]
-                # pretrust = [dict(i=localtrust[0].get('j'), v=1)]
 
-                # Option A - Run EigenTrust algorithm - Use local variable
-                # globaltrust = eigentrust.run_eigentrust(localtrust, pretrust)
+                # Run EigenTrust on the localtrust array
                 globaltrust = eigentrust.run_eigentrust(localtrust)
 
+                # Sort the globaltrust array by the i key
                 globaltrust.sort(key=lambda row: row['i'])
                 
                 if key not in gt:
