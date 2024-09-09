@@ -1,5 +1,5 @@
 {
-  "name": "swarmzero-agent-ui",
+  "name": "eigentrust-orbis-example",
   "version": "0.0.1",
   "scripts": {
     "generate": "node ./scripts/generate.mjs",

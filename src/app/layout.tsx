@@ -12,8 +12,8 @@ import { Web3ModalProvider } from "../context/Web3ModalProvider"
 const inter: NextFont = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SwarmZero Network - Agent UI",
-  description: "UI for SwarmZero Agents",
+  title: "AI Agent UI",
+  description: "UI for AI Agents",
 }
 
 export default function RootLayout({

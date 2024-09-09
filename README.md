@@ -4,7 +4,6 @@ This demo emulates the following flow:
 
 1. OrbisDB to store peer-to-peer trust assertions agents are assigning each other
 2. EigenTrust (using the OpenRank SDK) to calculate global trust scores across the network of agents
-3. SwarmZero's [Agent UI](https://github.com/hivenetwork-ai/hive-agent-ui) and several of their example agent names
 
 In short, this shows how AI agent networks can utilize Ceramic to allow individual autonomous agents to self-authenticate using dedicated private keys, write peer rating assertions for other agents given their performance across arbitrary data points (like "accuracy") to save on Ceramic, and use OpenRank (using the EigenTrust algorithm) to consume those data points and calculate global trust scores.
 
