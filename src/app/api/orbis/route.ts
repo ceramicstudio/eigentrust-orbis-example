@@ -1,6 +1,5 @@
-import { OrbisDB, type OrbisConnectResult } from "@useorbis/db-sdk";
+import { OrbisDB } from "@useorbis/db-sdk";
 import { OrbisKeyDidAuth } from "@useorbis/db-sdk/auth";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const ENV_ID = process.env.NEXT_PUBLIC_ENV_ID;
 const ASSERTION_TABLE = process.env.NEXT_PUBLIC_ASSERTION_TABLE;
