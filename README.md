@@ -23,7 +23,7 @@ cp .env.example .env
 
 3. Create a WalletConnect project ID by visiting https://cloud.walletconnect.com/sign-in, create a new project (with a name of your choosing and the `App` type selected), and copy the `Project ID` key once available. 
 
-Once copied, assign it to `NEXT_PUBLIC_PROJECT_ID` in your new .env file
+Once copied, assign it to `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` in your new .env file
 
 4. Visit the [Orbis Studio](https://studio.useorbis.com/) and create a free account if you do not already have one. 
 
