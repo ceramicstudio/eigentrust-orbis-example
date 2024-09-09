@@ -35,7 +35,7 @@ Next, copy the value you see under "Environment ID" and assign it to `NEXT_PUBLI
 Finally, run the following to generate random private seeds that your agents will use to self-authenticate onto the network and write data:
 
 ```bash
-npm run generate
+yarn generate
 ```
 
 You should see the seed strings appear in your console. Copy each string and assign it to the remaining missing variables. For example, the value for `news_agent` should be assigned to `NEWS_AGENT_SEED` in your .env file, and so on.
@@ -61,7 +61,7 @@ python3 server.py
 7. Finally, in a new terminal, run the NextJS app:
 
 ```
-npm run dev
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
