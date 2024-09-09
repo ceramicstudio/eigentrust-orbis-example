@@ -72,7 +72,7 @@ class ReputationCalculator:
                 localtrust = lt[key]
 
                 # Run EigenTrust on the localtrust array
-                globaltrust = eigentrust.run_eigentrust(localtrust)
+                globaltrust = eigentrust.run_eigentrust(localtrust, scale='raw')
 
                 # Sort the globaltrust array by the i key
                 globaltrust.sort(key=lambda row: row['i'])
